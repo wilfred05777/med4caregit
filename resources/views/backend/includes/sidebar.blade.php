@@ -10,9 +10,18 @@
                 </a>
             </li>
 
+            {{-- Patients Dashboard Nav--}}
+            <li class="nav-item">
+                <a class="nav-link {{ active_class(Active::checkUriPattern('admin/dashboard')) }}" href="{{ route('admin.dashboard') }}">
+                    <i class="nav-icon icon-user"></i> @lang('menus.backend.sidebar.dashboard')
+                </a>
+            </li>
+
             <li class="nav-title">
                 @lang('menus.backend.sidebar.system')
             </li>
+
+
 
             @if ($logged_in_user->isAdmin())
                 <li class="nav-item nav-dropdown {{ active_class(Active::checkUriPattern('admin/auth*'), 'open') }}">
